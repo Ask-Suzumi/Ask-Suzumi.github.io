@@ -1,0 +1,132 @@
+<svg width="1000" height="1300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap');
+      .layer-box { fill: #ffffff; stroke-width: 2; rx: 10; ry: 10; filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.1)); }
+      .title-text { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 16px; text-anchor: start; }
+      .node-box { stroke-width: 1; rx: 5; ry: 5; }
+      .node-text { font-family: 'Roboto', sans-serif; font-size: 13px; text-anchor: middle; alignment-baseline: middle; fill: #333; }
+      .label-text { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #555; }
+      .arrow { stroke: #555; stroke-width: 1.5; fill: none; }
+      .dashed { stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8f9fa" />
+  
+  <text x="500" y="40" font-family="Roboto, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">G6-Chain 系统架构全景图</text>
+
+  <circle cx="500" cy="100" r="30" fill="#333" stroke="#000" stroke-width="2"/>
+  <text x="500" y="105" text-anchor="middle" fill="white" font-size="12">User</text>
+  <text x="500" y="145" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">用户 / 终端</text>
+
+  <rect x="50" y="180" width="900" height="180" class="layer-box" stroke="#2196f3" fill="#e3f2fd" fill-opacity="0.3"/>
+  <text x="70" y="210" class="title-text" fill="#1565c0">💻 表现层 (Presentation Layer)</text>
+  
+  <rect x="400" y="230" width="200" height="40" class="node-box" fill="#bbdefb" stroke="#1565c0"/>
+  <text x="500" y="255" class="node-text">主循环与菜单 (Main Loop)</text>
+
+  <rect x="100" y="300" width="180" height="40" class="node-box" fill="#ffffff" stroke="#1565c0"/>
+  <text x="190" y="325" class="node-text">登录/注册 (LoginUI)</text>
+
+  <rect x="300" y="300" width="180" height="40" class="node-box" fill="#ffffff" stroke="#1565c0"/>
+  <text x="390" y="325" class="node-text">区块浏览器 (ExplorerUI)</text>
+
+  <rect x="520" y="300" width="180" height="40" class="node-box" fill="#ffffff" stroke="#1565c0"/>
+  <text x="610" y="325" class="node-text">矿工管理 (MinerUI)</text>
+
+  <rect x="720" y="300" width="180" height="40" class="node-box" fill="#ffffff" stroke="#1565c0"/>
+  <text x="810" y="325" class="node-text">用户列表 (UserListUI)</text>
+
+  <line x1="500" y1="130" x2="500" y2="230" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="270" x2="190" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="270" x2="390" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="270" x2="610" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="270" x2="810" y2="300" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <rect x="50" y="400" width="900" height="350" class="layer-box" stroke="#ff9800" fill="#fff3e0" fill-opacity="0.3"/>
+  <text x="70" y="430" class="title-text" fill="#e65100">⚙️ 核心业务逻辑层 (Core Logic)</text>
+
+  <rect x="80" y="450" width="260" height="280" rx="5" fill="white" stroke="#ffcc80" stroke-dasharray="2,2"/>
+  <text x="210" y="475" class="label-text" fill="#ef6c00">共识与挖矿引擎</text>
+  <rect x="110" y="490" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="210" y="512" class="node-text">自动挖矿检测 (AutoMine)</text>
+  <rect x="110" y="550" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="210" y="572" class="node-text">PoW 算力计算 (CalcHash)</text>
+  <rect x="110" y="610" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="210" y="632" class="node-text">矿工选择器 (Selector)</text>
+  <rect x="110" y="670" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="210" y="692" class="node-text">创世初始化 (Genesis)</text>
+
+  <rect x="370" y="450" width="260" height="280" rx="5" fill="white" stroke="#ffcc80" stroke-dasharray="2,2"/>
+  <text x="500" y="475" class="label-text" fill="#ef6c00">交易与钱包管理</text>
+  <rect x="400" y="490" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="500" y="512" class="node-text">交易处理器 (TxProcessor)</text>
+  <rect x="400" y="550" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="500" y="572" class="node-text">默克尔根计算 (Merkle)</text>
+  <rect x="400" y="610" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="500" y="632" class="node-text">余额计算器 (Balance)</text>
+  <rect x="400" y="670" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="500" y="692" class="node-text">资金溯源引擎 (Trace)</text>
+
+  <rect x="660" y="450" width="260" height="280" rx="5" fill="white" stroke="#ffcc80" stroke-dasharray="2,2"/>
+  <text x="790" y="475" class="label-text" fill="#ef6c00">账户与权限管理</text>
+  <rect x="690" y="490" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="790" y="512" class="node-text">认证服务 (AuthService)</text>
+  <rect x="690" y="550" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="790" y="572" class="node-text">地址解析器 (Resolver)</text>
+  <rect x="690" y="610" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="790" y="632" class="node-text">矿工增删逻辑 (MinerMgr)</text>
+  <rect x="690" y="670" width="200" height="35" class="node-box" fill="#ffe0b2" stroke="#f57c00"/>
+  <text x="790" y="692" class="node-text">联系人管理 (ContactMgr)</text>
+
+  <line x1="190" y1="340" x2="690" y2="490" class="arrow" marker-end="url(#arrowhead)"/> <line x1="390" y1="340" x2="500" y2="670" class="arrow" marker-end="url(#arrowhead)"/> <line x1="610" y1="340" x2="750" y2="610" class="arrow" marker-end="url(#arrowhead)"/> <line x1="810" y1="340" x2="500" y2="610" class="arrow" marker-end="url(#arrowhead)"/> <rect x="50" y="790" width="900" height="200" class="layer-box" stroke="#4caf50" fill="#e8f5e9" fill-opacity="0.3"/>
+  <text x="70" y="820" class="title-text" fill="#1b5e20">💾 内存数据模型 (In-Memory Data Models)</text>
+
+  <rect x="100" y="850" width="180" height="100" class="node-box" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="190" y="880" class="node-text" font-weight="bold">Blockchain List</text>
+  <text x="190" y="900" class="node-text">双向链表</text>
+  <text x="190" y="920" class="node-text">(g_head / g_tail)</text>
+
+  <rect x="300" y="850" width="180" height="100" class="node-box" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="390" y="880" class="node-text" font-weight="bold">Mempool</text>
+  <text x="390" y="900" class="node-text">数组队列</text>
+  <text x="390" y="920" class="node-text">(g_mempool)</text>
+
+  <rect x="520" y="850" width="180" height="100" class="node-box" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="610" y="880" class="node-text" font-weight="bold">Miner List</text>
+  <text x="610" y="900" class="node-text">单向链表</text>
+  <text x="610" y="920" class="node-text">(g_miner_head)</text>
+
+  <rect x="720" y="850" width="180" height="100" class="node-box" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="810" y="880" class="node-text" font-weight="bold">Contact List</text>
+  <text x="810" y="900" class="node-text">单向链表</text>
+  <text x="810" y="920" class="node-text">(g_contact_head)</text>
+
+  <line x1="210" y1="585" x2="190" y2="850" class="arrow" marker-end="url(#arrowhead)"/> <line x1="500" y1="525" x2="390" y2="850" class="arrow" marker-end="url(#arrowhead)"/> <line x1="790" y1="645" x2="610" y2="850" class="arrow" marker-end="url(#arrowhead)"/> <line x1="790" y1="705" x2="810" y2="850" class="arrow" marker-end="url(#arrowhead)"/> <rect x="50" y="1030" width="900" height="180" class="layer-box" stroke="#9c27b0" fill="#f3e5f5" fill-opacity="0.3"/>
+  <text x="70" y="1060" class="title-text" fill="#4a148c">🏗️ 基础设施层 (Infrastructure)</text>
+
+  <rect x="150" y="1090" width="200" height="80" class="node-box" fill="#e1bee7" stroke="#7b1fa2"/>
+  <text x="250" y="1120" class="node-text" font-weight="bold">🔐 Crypto Utils</text>
+  <text x="250" y="1145" class="node-text">SHA-256 算法实现</text>
+
+  <rect x="500" y="1090" width="350" height="80" class="node-box" fill="#cfd8dc" stroke="#455a64"/>
+  <text x="675" y="1115" class="node-text" font-weight="bold">💾 File Persistence (I/O)</text>
+  <text x="560" y="1145" class="node-text" font-size="11">blockchain.dat</text>
+  <text x="650" y="1145" class="node-text" font-size="11">miners.dat</text>
+  <text x="730" y="1145" class="node-text" font-size="11">contacts.dat</text>
+  <text x="810" y="1145" class="node-text" font-size="11">mempool.dat</text>
+
+  <path d="M 210 730 L 210 1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+  <path d="M 500 730 L 290 1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+  <path d="M 790 730 L 330 1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+
+  <line x1="190" y1="950" x2="550" y2="1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+  <line x1="390" y1="950" x2="810" y2="1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+  <line x1="610" y1="950" x2="650" y2="1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+  <line x1="810" y1="950" x2="730" y2="1090" class="arrow dashed" marker-end="url(#arrowhead)"/>
+
+</svg>
