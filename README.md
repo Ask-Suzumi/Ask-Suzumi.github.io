@@ -1,1 +1,1 @@
-# Ask-Suzumi.github.io
+![Struct](https://ask-suzumi.github.io/Struct.svg)
